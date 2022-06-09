@@ -51,17 +51,26 @@ class pg8{
                         }
                     }
                 }
-                
             }
         }
 
         //Display Result
-        System.out.println("The process order:");
+        check=true;
+        for(int i=0;i<numP;i++){
+            if(res[i]==-1){
+                check=false;
+                break;
+            }
+        }
+        if(check){System.out.println("The process order:");
         for(int i=1;i<=numP;i++){
             for(int j=0;j<numP;j++){
                 if(i==res[j])System.out.printf("P%d",j+1);
             }
+        }}else{
+            System.out.println("unsafe/deadlock occurs");
         }
+        
         s.close();
     }
 }

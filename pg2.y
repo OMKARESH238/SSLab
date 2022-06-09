@@ -16,4 +16,4 @@ void main(){
 int yyerror(){
     printf("\nError");
     return 1;
-}
+} 

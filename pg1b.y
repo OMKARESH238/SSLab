@@ -5,18 +5,17 @@ int yylex();
 %}
 
 %token num
-/* %left '+' '-' */
-/* %left '*' '/' */
-/* %left '(' ')' */
+%left '+' '-'
+%left '*' '/'
 
 %%
-input: E   {printf("%d\n",$$);exit(0);}
-E:   E'+'E   {$$=$1+$3;}
-        |E'-'E  {$$=$1-$3;}
-        |E'*'E  {$$=$1*$3;}
-        |E'/'E  {if($3==0){printf("DivideByZeroError");exit(0);}
+input: exp   {printf("%d\n",$$);exit(0);}
+exp:   exp'+'exp   {$$=$1+$3;}
+        |exp'-'exp  {$$=$1-$3;}
+        |exp'*'exp  {$$=$1*$3;}
+        |exp'/'exp  {if($3==0){printf("DivideByZeroError");exit(0);}
                     else $$=$1/$3;}
-        |'('E')'{$$=$2;}
+        |'('exp')'{$$=$2;}
         |num{$$=$1;}
 %%
 
