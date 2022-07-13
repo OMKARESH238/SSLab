@@ -1,3 +1,4 @@
+package Program8;
 import java.util.Scanner;
 
 class pg8{
