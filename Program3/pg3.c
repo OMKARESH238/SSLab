@@ -57,7 +57,7 @@ int main()
     printf("\nGrammar\n");
     for (i = 0; i < 3; i++)
         printf("%s\n", prod[i]);
-    printf("\nfirst={%s,%s,%s}", fir st[0], first[1], first[2]);
+    printf("\nfirst={%s,%s,%s}", first[0], first[1], first[2]);
     printf("\nfollow={%s,%s}\n", follow[0], follow[1]);
     printf("\nPredictive Parsing Table For The Given Grammar :\n");
     strcpy(table[0][0], "");
